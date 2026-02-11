@@ -571,6 +571,23 @@
         }
 
         .profile-section {
+        display: grid;
+        grid-template-columns: minmax(auto, 350px) 1fr;
+        gap: 4rem;
+        margin-bottom: 4rem;
+        align-items: start;
+        }
+
+        .profile-image-container {
+        border: 1px solid var(--border-grey);
+        padding: 0;
+        overflow: hidden;
+        position: relative;
+        background: var(--bg-dark);
+        line-height: 0;
+        }
+
+        /* .profile-section {
             display: grid;
             grid-template-columns: 350px 1fr;
             gap: 4rem;
@@ -584,10 +601,13 @@
             overflow: hidden;
             position: relative;
             background: var(--bg-dark);
-            /*display: flex;*/
+            line-height: 0;
+            width: fit-content;
+            max-width: 350px;
+            display: flex;
             align-items: center;
             justify-content: center;
-        }
+        } */
 
         .profile-image-placeholder {
             position: absolute;
@@ -606,6 +626,17 @@
         .profile-image {
             width: 100%;
             height: auto;
+            display: block;
+            object-fit: cover;
+            filter: grayscale(100%);
+            transition: filter var(--transition-normal), transform var(--transition-normal);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* .profile-image {
+            width: 100%;
+            height: auto;
             object-fit: contain;
             object-position: center;
             filter: grayscale(100%);
@@ -614,12 +645,13 @@
             position: relative;
             z-index: 1;
             display: block;
-        }
+        } */
         
         .profile-image:hover {
             filter: grayscale(0%);
             transform: scale(1.05);
         }
+
 
         .profile-bio {
             display: flex;
@@ -1314,7 +1346,8 @@
             }
 
             .profile-section {
-                grid-template-columns: 280px 1fr;
+                /* grid-template-columns: 280px 1fr; */
+                grid-template-columns: auto 1fr;
                 gap: 3rem;
             }
 
