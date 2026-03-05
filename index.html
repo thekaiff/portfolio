@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kaif — Data Analyst Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Custom cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Page loader -->
+  <div class="page-loader" id="pageLoader">
+    <div class="loader-inner">
+      <span class="loader-text">KS</span>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- ============ FLOATING NAV ============ -->
+  <nav class="nav-pill" id="navbar">
+    <a href="https://www.flaticon.com/free-icons/analytical-skill" class="nav-logo">Kaif's Portfolio</a>
+    <ul class="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#tech">Tech</a></li>
+      <li><a href="#projects">Projects</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Contact</a>
+    <button class="nav-burger" id="navBurger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#hero" class="mobile-link">Home</a>
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#tech" class="mobile-link">Tech</a>
+    <a href="#projects" class="mobile-link">Projects</a>
+    <a href="#contact" class="mobile-link cta">Contact</a>
+  </div>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero">
+    <div class="hero-noise"></div>
+    <div class="hero-blob blob-1"></div>
+    <div class="hero-blob blob-2"></div>
+    <div class="hero-blob blob-3"></div>
+    <div class="hero-grid-overlay"></div>
+
+    <div class="hero-inner">
+      <div class="hero-left reveal">
+        <span class="hero-tag">
+          <span class="tag-pulse"></span>
+          Available for Projects · UAE
+        </span>
+        <h1 class="hero-headline">
+          I help companies turn<br/>
+          <em>messy data</em> into<br/>
+          high-growth insights<br/>
+          in under 30 days.
+        </h1>
+        <p class="hero-sub">Supplier risk. Churn signals. Revenue leaks.
+          I work across the full stack — <em>Python, SQL,
+          Power BI, ML</em> — to turn business problems
+          into decisions backed by evidence.</p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn-primary magnetic">
+            <span>View My Work</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#contact" class="btn-ghost magnetic">Let's Talk →</a>
+        </div>
+      </div>
+
+      <div class="hero-right reveal reveal-delay">
+        <div class="hero-card">
+          <div class="hero-card-glow"></div>
+          <div class="hero-card-top">
+            <div class="avatar-ring">
+              <div class="avatar-inner">KS</div>
+            </div>
+            <div>
+              <p class="card-name">Kaif Sayed</p>
+              <div class="text-slider-wrap">
+                <div class="text-slider" id="textSlider">
+                  <span class="slide active">Data Analyst</span>
+                  <span class="slide">BI Developer</span>
+                  <span class="slide">ML Practitioner</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hero-card-stats">
+            <div class="stat">
+              <span class="stat-num" data-count="10">10+</span>
+              <span class="stat-label">Industry-Grade Projects</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+              <span class="stat-num">6+</span>
+              <span class="stat-label">Tools in Production Use</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+              <span class="stat-num">100%</span>
+              <span class="stat-label">End-to-End Ownership</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-badge">
+          <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4.5 2 7L12 17l-6.5 3.5 2-7L2 9h7z"/></svg>
+          Top Rated Analyst
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ============ PAIN POINTS BENTO ============ -->
+  <section class="bento-section" id="pain-points">
+    <div class="section-card">
+      <div class="container" style="padding:0">
+        <div class="section-label reveal">The Problem</div>
+        <h2 class="section-title reveal">Does any of this<br/>sound familiar?</h2>
+        <div class="bento-grid">
+
+          <div class="bento-card bento-wide reveal">
+            <div class="bento-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+            </div>
+            <h3>Manual Reporting Overload</h3>
+            <p>Your team spends hours every week copy-pasting spreadsheets, building the same reports — and still the data is never quite right by the time it reaches leadership.</p>
+            <div class="bento-tag">Time Drain</div>
+          </div>
+
+          <div class="bento-card reveal reveal-delay">
+            <div class="bento-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+            </div>
+            <h3>Metrics Without Meaning</h3>
+            <p>Dashboards full of numbers, but no one can answer: what's actually causing this? Data without narrative is just noise.</p>
+            <div class="bento-tag">No Clarity</div>
+          </div>
+
+          <div class="bento-card reveal reveal-delay-2">
+            <div class="bento-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+            </div>
+            <h3>Hidden Growth Leaks</h3>
+            <p>Revenue opportunities are hiding in plain sight inside your data. Without the right analysis, you're flying blind on growth.</p>
+            <div class="bento-tag">Missed Revenue</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ME ============ -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="about-grid">
+
+        <div class="about-image-col reveal">
+          <div class="about-image-wrap">
+            <div class="about-img-frame"></div>
+            <img src="images/photo.jpeg" alt="Kaif Sayed — Data Analyst" class="about-img" />
+            <div class="about-img-badge">
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4.5 2 7L12 17l-6.5 3.5 2-7L2 9h7z"/></svg>
+              Open to Work
+            </div>
+          </div>
+        </div>
+
+        <div class="about-content-col reveal reveal-delay">
+          <div class="section-label">About Me</div>
+          <h2 class="section-title">
+            Turning raw data into<br/><em>stories that stick</em>
+          </h2>
+          <p class="about-para">
+            Hey, I'm Kaif — a data analyst with 1.5+ years of experience helping
+            growth-stage companies cut through noise and make faster, smarter decisions.
+            I specialize in building automated reporting systems, clean data pipelines,
+            and dashboards that executives actually open.
+          </p>
+          <p class="about-para">
+            Before going independent, I worked at a tech startup where I rebuilt the
+            entire reporting stack from scratch — reducing weekly reporting time from
+            12 hours to 45 minutes. That's the kind of impact I bring to every project.
+          </p>
+          <div class="about-chips">
+            <span>SQL &amp; Python</span>
+            <span>Power BI</span>
+            <span>Machine Learning</span>
+            <span>EDA</span>
+            <span>Data Storytelling</span>
+            <span>Funnel Analysis</span>
+            <span>Sentiment Analysis</span>
+            <span>UAE-Based</span>
+            <span>Remote Ready</span>
+          </div>
+          <div class="about-actions">
+            <a href="#contact" class="btn-primary magnetic">
+              <span>Work With Me</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="cv/Kaif_Data_Analyst.pdf" class="btn-ghost magnetic" download>Download CV ↓</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BENEFITS ============ -->
+  <section class="benefits-section" id="benefits">
+    <div class="section-card">
+      <div class="container benefits-grid" style="padding:0">
+        <div class="benefits-left reveal">
+          <div class="section-label">What I Deliver</div>
+          <h2 class="section-title">Data clarity.<br/>Business momentum.</h2>
+          <p class="benefits-desc">I bridge the gap between raw data and real decisions. Here's what working with me looks like:</p>
+          <a href="#contact" class="btn-primary magnetic">
+            <span>Start a Project</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+        <div class="benefits-right reveal reveal-delay">
+          <ul class="benefits-list">
+            <li>
+              <span class="benefit-dot"></span>
+              <div>
+                <strong>Automated Dashboards</strong>
+                <p>Real-time, self-updating dashboards in Tableau or Power BI — no more manual refresh rituals.</p>
+              </div>
+            </li>
+            <li>
+              <span class="benefit-dot"></span>
+              <div>
+                <strong>Clean, Reliable Data Pipelines</strong>
+                <p>Python and SQL-powered pipelines that eliminate errors and build trust in your numbers.</p>
+              </div>
+            </li>
+            <li>
+              <span class="benefit-dot"></span>
+              <div>
+                <strong>Insight Reports that Drive Action</strong>
+                <p>Narrative-driven analysis that tells the story behind the numbers so leaders can decide fast.</p>
+              </div>
+            </li>
+            <li>
+              <span class="benefit-dot"></span>
+              <div>
+                <strong>30-Day Delivery Guarantee</strong>
+                <p>Clear scope, clear timelines. Every engagement delivered with speed and precision.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STORYTELLING STICKY SCROLL ============ -->
+  <section class="story-section" id="process">
+    <div class="story-intro reveal">
+      <div class="section-label">How I Work</div>
+      <h2 class="section-title">Every insight has<br/><em>a story behind it</em></h2>
+    </div>
+
+    <div class="story-wrapper">
+      <div class="story-sticky">
+        <div class="story-stage">
+          <div class="story-spine">
+            <div class="story-spine-fill" id="spineFill"></div>
+          </div>
+          <div class="story-visual-box">
+            <div class="story-step-visual" id="storyVisual">
+
+              <div class="sv sv-1 active">
+                <div class="sv1-grid">
+                  <span></span><span></span><span></span><span></span>
+                  <span></span><span></span><span></span><span></span>
+                  <span></span><span></span><span></span><span></span>
+                </div>
+                <p class="sv-caption">Scattered. Unstructured. Unclear.</p>
+              </div>
+
+              <div class="sv sv-2">
+                <div class="sv2-pipeline">
+                  <div class="pipe-node">RAW</div>
+                  <div class="pipe-arrow">→</div>
+                  <div class="pipe-node">CLEAN</div>
+                  <div class="pipe-arrow">→</div>
+                  <div class="pipe-node">MODEL</div>
+                </div>
+                <p class="sv-caption">Structured. Reliable. Trusted.</p>
+              </div>
+
+              <div class="sv sv-3">
+                <div class="sv3-bars">
+                  <div class="sv3-bar" style="--h:40%"><span>Q1</span></div>
+                  <div class="sv3-bar" style="--h:62%"><span>Q2</span></div>
+                  <div class="sv3-bar" style="--h:78%"><span>Q3</span></div>
+                  <div class="sv3-bar" style="--h:95%"><span>Q4</span></div>
+                </div>
+                <p class="sv-caption">The story becomes visible.</p>
+              </div>
+
+              <div class="sv sv-4">
+                <div class="sv4-launch">
+                  <div class="sv4-circle c1"></div>
+                  <div class="sv4-circle c2"></div>
+                  <div class="sv4-circle c3"></div>
+                  <div class="sv4-icon">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12l3 3 5-5"/></svg>
+                  </div>
+                </div>
+                <p class="sv-caption">Shipped. Automated. Yours.</p>
+              </div>
+
+            </div>
+            <div class="story-counter">
+              <span id="storyCountCurrent">01</span>
+              <span class="story-counter-div">/</span>
+              <span class="story-counter-total">04</span>
+            </div>
+          </div>
+          <div class="story-dots" id="storyDots">
+            <div class="story-dot active" data-step="0"></div>
+            <div class="story-dot" data-step="1"></div>
+            <div class="story-dot" data-step="2"></div>
+            <div class="story-dot" data-step="3"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="story-steps" id="storySteps">
+        <div class="story-step" data-step="0">
+          <div class="step-tag">Discovery</div>
+          <div class="step-num-large">01</div>
+          <h3>Your data is a mess.<br/>That's okay — it always is.</h3>
+          <p>Every engagement starts here: I map your entire data landscape, interview stakeholders, and audit every source. No assumptions. No shortcuts. Just an honest picture of where you stand and what it'll take to get where you want to go.</p>
+          <ul class="step-checklist">
+            <li><span class="chk">✓</span> Stakeholder interviews</li>
+            <li><span class="chk">✓</span> Source & quality audit</li>
+            <li><span class="chk">✓</span> Goal & KPI mapping</li>
+          </ul>
+        </div>
+        <div class="story-step" data-step="1">
+          <div class="step-tag">Engineering</div>
+          <div class="step-num-large">02</div>
+          <h3>I build the foundation<br/>everything else rests on.</h3>
+          <p>Using SQL and Python, I design pipelines that clean, transform, and model your data reliably. The result: a single source of truth your whole team can trust. No more "which number is right?" conversations in Monday meetings.</p>
+          <ul class="step-checklist">
+            <li><span class="chk">✓</span> SQL & Python pipelines</li>
+            <li><span class="chk">✓</span> Automated data cleaning</li>
+            <li><span class="chk">✓</span> Scalable data models</li>
+          </ul>
+        </div>
+        <div class="story-step" data-step="2">
+          <div class="step-tag">Visualization</div>
+          <div class="step-num-large">03</div>
+          <h3>Now the numbers<br/>start telling a story.</h3>
+          <p>I design dashboards and insight narratives built for real humans — not just analysts. Executives get the headline. Managers get the detail. Everyone gets clarity. Built in Tableau or Power BI, ready on day one.</p>
+          <ul class="step-checklist">
+            <li><span class="chk">✓</span> Executive dashboards</li>
+            <li><span class="chk">✓</span> KPI tracking systems</li>
+            <li><span class="chk">✓</span> Insight narrative reports</li>
+          </ul>
+        </div>
+        <div class="story-step" data-step="3">
+          <div class="step-tag">Delivery</div>
+          <div class="step-num-large">04</div>
+          <h3>You own it.<br/>Fully. Forever.</h3>
+          <p>Full handoff with documentation, team training, and automated workflows. I don't create dependency — I create capability. You walk away with a system that runs itself, a team that understands it, and insights that compound over time.</p>
+          <ul class="step-checklist">
+            <li><span class="chk">✓</span> Full documentation</li>
+            <li><span class="chk">✓</span> Team training session</li>
+            <li><span class="chk">✓</span> Automation & scheduling</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TECH STACK ============ -->
+  <section class="tech-section" id="tech">
+    <div class="container">
+      <div class="tech-header reveal">
+        <div>
+          <div class="section-label">Tools &amp; Technologies</div>
+          <h2 class="section-title">My tech stack</h2>
+        </div>
+        <p class="tech-intro-text">Everything I use to go from raw data to boardroom-ready insight.</p>
+      </div>
+
+      <div class="tech-categories">
+
+        <div class="tech-category reveal">
+          <div class="tech-cat-label">Analysis & Statistics</div>
+          <div class="tech-pills">
+            <div class="tech-pill">
+              <div class="tp-icon ab">EDA</div>
+              <div class="tp-info"><span>Exploratory Data Analysis</span><small>Expert</small></div>
+              <div class="tp-bar"><div style="width:97%"></div></div>
+            </div>
+            <div class="tech-pill">
+              <div class="tp-icon fc">F/C</div>
+              <div class="tp-info"><span>Funnel & Cohort Analysis</span><small>Advanced</small></div>
+              <div class="tp-bar"><div style="width:88%"></div></div>
+            </div>
+            <div class="tech-pill">
+              <div class="tp-icon ab">HT</div>
+              <div class="tp-info"><span>Hypothesis Testing</span><small>Advanced</small></div>
+              <div class="tp-bar"><div style="width:85%"></div></div>
+            </div>
+            <div class="tech-pill">
+              <div class="tp-icon ml">DS</div>
+              <div class="tp-info"><span>Descriptive & Inferential Stats</span><small>Advanced</small></div>
+              <div class="tp-bar"><div style="width:83%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tech-category reveal reveal-delay">
+          <div class="tech-cat-label">KPI & Strategy</div>
+          <div class="tech-pills">
+            <div class="tech-pill">
+              <div class="tp-icon etl">KPI</div>
+              <div class="tp-info"><span>KPI Design & Measurement</span><small>Expert</small></div>
+              <div class="tp-bar"><div style="width:95%"></div></div>
+            </div>
+            <div class="tech-pill">
+              <div class="tp-icon fc">RPT</div>
+              <div class="tp-info"><span>Executive Reporting</span><small>Expert</small></div>
+              <div class="tp-bar"><div style="width:95%"></div></div>
+            </div>
+            <div class="tech-pill">
+              <div class="tp-icon ab">DST</div>
+              <div class="tp-info"><span>Dashboard Storytelling</span><small>Advanced</small></div>
+              <div class="tp-bar"><div style="width:90%"></div></div>
+            </div>
+            <div class="tech-pill">
+              <div class="tp-icon ml">CLN</div>
+              <div class="tp-info"><span>Data Cleaning & Validation</span><small>Advanced</small></div>
+              <div class="tp-bar"><div style="width:88%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tech-category reveal reveal-delay-2">
+          <div class="tech-cat-label">Python Ecosystem</div>
+          <div class="tech-pills">
+            <div class="tech-pill">
+              <div class="tp-icon py">Py</div>
+              <div class="tp-info"><span>Python</span><small>Advanced</small></div>
+              <div class="tp-bar"><div style="width:90%"></div></div>
+            </div>
+            <div class="tech-pill">
+              <div class="tp-icon pd">pd</div>
+              <div class="tp-info"><span>Pandas & NumPy</span><small>Advanced</small></div>
+              <div class="tp-bar"><div style="width:88%"></div></div>
+            </div>
+            <div class="tech-pill">
+              <div class="tp-icon sk">plt</div>
+              <div class="tp-info"><span>Matplotlib & Seaborn</span><small>Advanced</small></div>
+              <div class="tp-bar"><div style="width:85%"></div></div>
+            </div>
+            <div class="tech-pill">
+              <div class="tp-icon fc">FE</div>
+              <div class="tp-info"><span>Feature Engineering</span><small>Proficient</small></div>
+              <div class="tp-bar"><div style="width:75%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tech-category reveal">
+          <div class="tech-cat-label">Machine Learning & AI</div>
+          <div class="tech-pills">
+            <div class="tech-pill">
+              <div class="tp-icon ml">ML</div>
+              <div class="tp-info"><span>Machine Learning</span><small>Proficient</small></div>
+              <div class="tp-bar"><div style="width:75%"></div></div>
+            </div>
+            <div class="tech-pill">
+              <div class="tp-icon etl">RL</div>
+              <div class="tp-info"><span>Reinforcement Learning</span><small>Familiar</small></div>
+              <div class="tp-bar"><div style="width:55%"></div></div>
+            </div>
+            <div class="tech-pill">
+              <div class="tp-icon ab">SA</div>
+              <div class="tp-info"><span>Sentiment Analysis</span><small>Proficient</small></div>
+              <div class="tp-bar"><div style="width:72%"></div></div>
+            </div>
+            <div class="tech-pill">
+              <div class="tp-icon sk">sk</div>
+              <div class="tp-info"><span>Scikit-learn</span><small>Proficient</small></div>
+              <div class="tp-bar"><div style="width:70%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tech-category reveal reveal-delay">
+          <div class="tech-cat-label">BI & Visualization</div>
+          <div class="tech-pills">
+            <div class="tech-pill">
+              <div class="tp-icon pbi">PBI</div>
+              <div class="tp-info"><span>Power BI</span><small>Advanced</small></div>
+              <div class="tp-bar"><div style="width:88%"></div></div>
+            </div>
+            <div class="tech-pill">
+              <div class="tp-icon pbi">DAX</div>
+              <div class="tp-info"><span>DAX & KPI Dashboards</span><small>Proficient</small></div>
+              <div class="tp-bar"><div style="width:78%"></div></div>
+            </div>
+            <div class="tech-pill">
+              <div class="tp-icon xls">XLS</div>
+              <div class="tp-info"><span>Excel (Advanced)</span><small>Expert</small></div>
+              <div class="tp-bar"><div style="width:95%"></div></div>
+            </div>
+            <div class="tech-pill">
+              <div class="tp-icon etl">DRL</div>
+              <div class="tp-info"><span>Drill-downs & Slicers</span><small>Proficient</small></div>
+              <div class="tp-bar"><div style="width:80%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tech-category reveal reveal-delay-2">
+          <div class="tech-cat-label">Tools & Environment</div>
+          <div class="tech-pills">
+            <div class="tech-pill">
+              <div class="tp-icon sql">SQL</div>
+              <div class="tp-info"><span>SQL / MySQL</span><small>Advanced</small></div>
+              <div class="tp-bar"><div style="width:88%"></div></div>
+            </div>
+            <div class="tech-pill">
+              <div class="tp-icon nt">JPY</div>
+              <div class="tp-info"><span>Jupyter Notebook</span><small>Expert</small></div>
+              <div class="tp-bar"><div style="width:95%"></div></div>
+            </div>
+            <div class="tech-pill">
+              <div class="tp-icon gt">VS</div>
+              <div class="tp-info"><span>VS Code</span><small>Advanced</small></div>
+              <div class="tp-bar"><div style="width:90%"></div></div>
+            </div>
+            <div class="tech-pill">
+              <div class="tp-icon gt">GIT</div>
+              <div class="tp-info"><span>GitHub</span><small>Proficient</small></div>
+              <div class="tp-bar"><div style="width:82%"></div></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section class="projects-section" id="projects">
+    <div class="section-card">
+      <div class="container" style="padding:0">
+        <div class="projects-header">
+          <div class="reveal">
+            <div class="section-label">Work</div>
+            <h2 class="section-title">Projects</h2>
+            <p class="projects-sub">Real problems. Real data. Real results.</p>
+          </div>
+          <div class="projects-stats reveal reveal-delay">
+            <div class="pstat">
+              <span class="pstat-num">10+</span>
+              <span class="pstat-label">Projects Done</span>
+            </div>
+            <div class="pstat">
+              <span class="pstat-num">30</span>
+              <span class="pstat-label">Days Avg Delivery</span>
+            </div>
+            <div class="pstat">
+              <span class="pstat-num">98%</span>
+              <span class="pstat-label">Accuracy Rate</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="projects-bento">
+
+          <div class="project-card project-tall reveal">
+            <div class="project-visual pv-bars">
+              <div class="chart-bar-wrap">
+                <div class="chart-bar cb1"></div>
+                <div class="chart-bar cb2"></div>
+                <div class="chart-bar cb3"></div>
+                <div class="chart-bar cb4"></div>
+                <div class="chart-bar cb5"></div>
+              </div>
+            </div>
+            <div class="project-body">
+              <span class="project-cat">Python &middot; Power BI</span>
+              <h3>Sales & Funnel Performance Dashboard</h3>
+              <p>Sales funnel and operations analysis for Olist. Uncovered ~10% MQL-to-close conversion, channel efficiency gaps, and logistics bottlenecks. Delivered with executive-ready dashboards.</p>
+              <a href="https://github.com/thekaiff/customer-funnel-and-sentiment-analysis" class="project-btn" target="_blank">View on GitHub →</a>
+            </div>
+          </div>
+
+          <div class="project-card reveal reveal-delay">
+            <div class="project-visual pv-line">
+              <svg width="100%" height="70" viewBox="0 0 200 70" fill="none" preserveAspectRatio="none">
+                <polyline points="0,55 40,38 80,48 120,15 160,28 200,5" stroke="var(--accent)" stroke-width="2" fill="none" opacity="0.7"/>
+                <polyline points="0,65 40,52 80,58 120,35 160,45 200,25" stroke="var(--accent)" stroke-width="1.5" fill="none" opacity="0.3"/>
+              </svg>
+            </div>
+            <div class="project-body">
+              <span class="project-cat">SQL &middot; Machine Learning &middot; Power BI</span>
+              <h3>Customer Churn Predictor</h3>
+              <p>Telecom churn analysis and prediction using Random Forest. Identified key churn drivers and flagged 15–20% of the customer base as high-risk — before they cancelled.</p>
+              <a href="https://github.com/thekaiff/Customer-Churn-Analysis-And-Prediction" class="project-btn" target="_blank">View on GitHub →</a>
+            </div>
+          </div>
+
+          <div class="project-card reveal reveal-delay-2">
+            <div class="project-visual pv-donut">
+              <svg width="80" height="80" viewBox="0 0 80 80">
+                <circle cx="40" cy="40" r="28" fill="none" stroke="#eee" stroke-width="10"/>
+                <circle cx="40" cy="40" r="28" fill="none" stroke="var(--accent)" stroke-width="10"
+                  stroke-dasharray="106 70" stroke-dashoffset="25" stroke-linecap="round"/>
+                <text x="40" y="45" text-anchor="middle" font-size="11" fill="var(--text-dark)" font-family="DM Sans" font-weight="500">60%</text>
+              </svg>
+            </div>
+            <div class="project-body">
+              <span class="project-cat">Python &middot; Power BI &middot; SQL</span>
+              <h3>Inventory Risk Optimization Report</h3>
+              <p>Supplier profitability & dependency risk analysis for a wholesale business. Uncovered 72% bulk-purchase cost savings and flagged 80%+ vendor concentration risk before it became a crisis.</p>
+              <a href="https://github.com/thekaiff/supplier-profitability-dependency-risk-analysis" class="project-btn" target="_blank">View on GitHub →</a>
+            </div>
+          </div>
+
+          <div class="project-card project-wide reveal">
+            <div class="project-visual pv-heatmap">
+              <div class="hm-row">
+                <div class="hm-cell" style="--op:0.15"></div><div class="hm-cell" style="--op:0.4"></div><div class="hm-cell" style="--op:0.7"></div><div class="hm-cell" style="--op:0.9"></div><div class="hm-cell" style="--op:0.5"></div><div class="hm-cell" style="--op:0.3"></div><div class="hm-cell" style="--op:0.8"></div>
+              </div>
+              <div class="hm-row">
+                <div class="hm-cell" style="--op:0.6"></div><div class="hm-cell" style="--op:0.2"></div><div class="hm-cell" style="--op:0.85"></div><div class="hm-cell" style="--op:0.45"></div><div class="hm-cell" style="--op:1"></div><div class="hm-cell" style="--op:0.6"></div><div class="hm-cell" style="--op:0.25"></div>
+              </div>
+            </div>
+            <div class="project-body">
+              <span class="project-cat">SQL &middot; Machine Learning &middot; Power BI</span>
+              <h3>Marketing Attribution Model</h3>
+              <p>End-to-end funnel and sentiment analysis for an e-commerce brand. Conversion rates swung from 4.3% to 18.5% across segments. Sentiment scored across 357+ customer reviews to surface product-level patterns.</p>
+              <a href="https://github.com/thekaiff/customer-funnel-and-sentiment-analysis" class="project-btn" target="_blank">View on GitHub →</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIAL ============ -->
+  <section class="testimonial-section">
+    <div class="container">
+      <div class="testimonial-card reveal">
+        <div class="testimonial-glow"></div>
+        <div class="quote-mark">&ldquo;</div>
+        <blockquote>Kaif transformed our reporting in under 3 weeks. What used to take our team 8 hours per week now runs automatically every morning. The ROI was immediate.</blockquote>
+        <div class="testimonial-author">
+          <div class="author-avatar">AK</div>
+          <div>
+            <strong>Anis Al Abdul Khuddus</strong>
+            <span>Founder of House Of Panache</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-left reveal">
+          <div class="section-label">Get In Touch</div>
+          <h2 class="section-title">Let's build something<br/><em>meaningful</em></h2>
+          <p>Have a data challenge? Ready to turn your spreadsheets into strategy? Drop me a message and I'll reply within 24 hours.</p>
+          <div class="contact-info">
+            <div class="contact-info-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:thekaif.uae@gmail.com">thekaif.uae@gmail.com</a>
+            </div>
+            <div class="contact-info-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              United Arab Emirates &middot; Remote Available
+            </div>
+          </div>
+          <div class="social-links">
+            <a href="https://github.com/thekaiff" class="social-link" target="_blank" aria-label="GitHub">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/kaifsayed57/" class="social-link" target="_blank" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="https://x.com/thekaiffff" class="social-link" target="_blank" aria-label="Twitter/X">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-right reveal reveal-delay">
+          <form class="contact-form" id="contactForm">
+            <input type="hidden" name="access_key" value="a6729772-7ab7-4c53-b208-fdcf4790bf46" />
+            <input type="checkbox" name="botcheck" style="display:none" />
+            <input type="hidden" name="subject" value="New message from portfolio contact form" />
+            <div class="form-row">
+              <div class="form-group">
+                <label>Name</label>
+                <input type="text" name="name" placeholder="Your full name" required />
+              </div>
+              <div class="form-group">
+                <label>Email</label>
+                <input type="email" name="email" placeholder="your@email.com" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Subject</label>
+              <input type="text" name="subject_line" placeholder="What's this about?" />
+            </div>
+            <div class="form-group">
+              <label>Message</label>
+              <textarea name="message" rows="5" placeholder="Tell me about your data challenge..."></textarea>
+            </div>
+            <button type="submit" class="btn-primary btn-full magnetic">
+              <span>Send Message →</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-card">
+        <div class="footer-top">
+          <div class="footer-col">
+            <div class="footer-logo">Kaif's Portfolio</div>
+            <p class="footer-tagline">Turning messy data into<br/>high-growth insights.</p>
+            <p class="footer-address">Dubai<br/>United Arab Emirates</p>
+          </div>
+          <div class="footer-col">
+            <h4>Navigation</h4>
+            <ul>
+              <li><a href="#hero">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#tech">Tech Stack</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <a href="mailto:thekaif.uae@gmail.com" class="footer-link">thekaif.uae@gmail.com</a>
+            <a href="https://calendly.com/thekaif-uae" class="footer-cta-link" target="_blank">Book a Call →</a>
+            <div class="footer-socials">
+              <p>Find me on:</p>
+              <div class="footer-social-row">
+                <a href="https://github.com/thekaiff" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/kaifsayed57/" target="_blank">LinkedIn</a>
+                <a href="https://x.com/thekaiffff" target="_blank">X / Twitter</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>&copy; 2025 Kaif Sayed &middot; All Rights Reserved</span>
+          <a href="#hero" class="back-to-top" id="backToTop">
+            Back to Top
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 15l7-7 7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
