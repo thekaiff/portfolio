@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
-  // =============================================
+  // =========================================F====
   // 3. FLOATING NAV — scroll shadow + active links
   // =============================================
   const navbar = document.getElementById('navbar');
@@ -265,6 +265,37 @@ document.addEventListener('DOMContentLoaded', () => {
       if (entry.isIntersecting) activateStep(+entry.target.dataset.step);
     });
   }, { threshold: 0.55, rootMargin: '-10% 0px -30% 0px' });
+
+  // Swipe on visual box (mobile)
+const visualBox = document.querySelector('.story-visual-box');
+if (visualBox) {
+  let touchStartX = 0;
+  let touchStartY = 0;
+
+  visualBox.addEventListener('touchstart', (e) => {
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+  }, { passive: true });
+
+  visualBox.addEventListener('touchend', (e) => {
+    const deltaX = e.changedTouches[0].clientX - touchStartX;
+    const deltaY = e.changedTouches[0].clientY - touchStartY;
+
+    // Only trigger if horizontal swipe is dominant
+    if (Math.abs(deltaX) < 40 || Math.abs(deltaX) < Math.abs(deltaY)) return;
+
+    const totalSteps = storyStepsEl.length;
+    const currentStep = [...storyStepsEl].findIndex(s => s.classList.contains('active'));
+
+    if (deltaX < 0) {
+      // Swipe left → next
+      activateStep(Math.min(currentStep + 1, totalSteps - 1));
+    } else {
+      // Swipe right → previous
+      activateStep(Math.max(currentStep - 1, 0));
+    }
+  }, { passive: true });
+}
 
   storyStepsEl.forEach(step => storyObserver.observe(step));
 
