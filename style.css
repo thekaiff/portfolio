@@ -919,6 +919,275 @@ body:has(.magnetic:hover) .cursor-ring {
 }
 
 /* =============================================
+   EXPERIENCE
+   ============================================= */
+.experience-section { padding: 100px 0; background: var(--bg-soft); }
+
+.exp-wrapper {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.exp-sticky { position: sticky; top: 110px; }
+
+.exp-stage {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.exp-spine {
+  width: 2px; height: 320px;
+  background: var(--border);
+  border-radius: 2px;
+  position: relative;
+  flex-shrink: 0;
+  margin-top: 8px;
+}
+.exp-spine-fill {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 0%;
+  background: linear-gradient(to bottom, var(--accent-mid), var(--accent));
+  border-radius: 2px;
+  transition: height 0.5s var(--ease);
+}
+
+.exp-visual-box {
+  flex: 1;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px 28px 20px;
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+.exp-visual-box::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-mid), transparent);
+  opacity: 0.4;
+}
+
+.exp-visual-inner { position: relative; min-height: 160px; }
+
+.ev {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  opacity: 0;
+  transform: translateY(16px) scale(0.97);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  pointer-events: none;
+}
+.ev.active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: all;
+}
+
+.ev-logo {
+  width: 52px; height: 52px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-mid));
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(45,45,42,0.18);
+}
+.ev-logo.zbr {
+  background: linear-gradient(135deg, #3d6a52, var(--accent-mid));
+}
+
+.ev-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.ev-company {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+.ev-location {
+  font-size: 12px;
+  color: var(--accent-mid);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+}
+
+.ev-stats {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-light);
+  margin-top: auto;
+}
+.ev-stat { text-align: left; }
+.ev-stat-num {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+.ev-stat-label {
+  font-size: 10px;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  line-height: 1.4;
+  margin-top: 3px;
+  display: block;
+}
+.ev-stat-div {
+  width: 1px; height: 32px;
+  background: var(--border);
+  flex-shrink: 0;
+}
+
+/* Counter */
+.exp-counter {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-top: 14px;
+}
+#expCountCurrent {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  line-height: 1;
+  transition: all 0.3s ease;
+}
+.exp-counter-div { color: var(--border); font-size: 1.1rem; margin: 0 2px; }
+.exp-counter-total { font-size: 0.8rem; color: var(--text-muted); }
+
+/* Dots */
+.exp-dots {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 8px;
+}
+.exp-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--border);
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s var(--ease-bounce);
+}
+.exp-dot.active { background: var(--accent-mid); transform: scale(1.4); }
+.exp-dot:hover:not(.active) { background: var(--accent-light); transform: scale(1.2); }
+
+/* Steps */
+.exp-steps { display: flex; flex-direction: column; }
+
+.exp-step {
+  padding: 56px 0;
+  border-bottom: 1px solid var(--border-light);
+  opacity: 0.3;
+  transform: translateX(12px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+.exp-step:first-child { padding-top: 0; }
+.exp-step:last-child  { border-bottom: none; padding-bottom: 32px; }
+.exp-step.active { opacity: 1; transform: translateX(0); }
+
+.exp-step-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.exp-date {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.exp-step h3 {
+  font-family: var(--font-display);
+  font-size: 1.85rem;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  color: var(--text-dark);
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+.exp-step h3 em {
+  font-style: italic;
+  color: var(--accent-mid);
+}
+
+.exp-checklist { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+.exp-checklist li {
+  font-size: 14.5px;
+  color: var(--text-mid);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.75;
+}
+.exp-checklist .chk {
+  color: var(--accent-mid);
+  font-weight: 700;
+  font-size: 12px;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .exp-wrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 0 20px;
+  }
+  .exp-sticky { position: relative; top: auto; }
+  .exp-spine { display: none; }
+  .exp-stage {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .exp-visual-box { width: 100%; min-height: 220px; }
+  .exp-dots {
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 12px;
+  }
+  .exp-step { opacity: 1; transform: none; padding: 32px 0; }
+  .exp-step:not(.active) { opacity: 0.5; }
+  .exp-step h3 { font-size: 1.45rem; }
+}
+
+/* =============================================
    STORYTELLING STICKY SCROLL
    ============================================= */
 .story-section { padding: 100px 0; background: var(--bg); }

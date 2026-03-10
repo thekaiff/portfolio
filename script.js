@@ -301,6 +301,55 @@ if (visualBox) {
 
 
   // =============================================
+// 9b. EXPERIENCE STICKY SCROLL
+// =============================================
+const expStepsEl  = document.querySelectorAll('.exp-step');
+const expVisuals  = document.querySelectorAll('.ev');
+const expDotEls   = document.querySelectorAll('.exp-dot');
+const expSpineFill = document.getElementById('expSpineFill');
+const expCounter  = document.getElementById('expCountCurrent');
+
+function activateExp(index) {
+  expStepsEl.forEach((s, i) => s.classList.toggle('active', i === index));
+  expVisuals.forEach((v, i) => v.classList.toggle('active', i === index));
+  expDotEls.forEach((d, i)  => d.classList.toggle('active', i === index));
+  if (expSpineFill) expSpineFill.style.height = `${((index + 1) / expStepsEl.length) * 100}%`;
+  if (expCounter)   expCounter.textContent = String(index + 1).padStart(2, '0');
+}
+
+if (expStepsEl.length) activateExp(0);
+
+expDotEls.forEach(dot => {
+  dot.addEventListener('click', () => activateExp(+dot.dataset.exp));
+});
+
+const expObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) activateExp(+entry.target.dataset.exp);
+  });
+}, { threshold: 0.55, rootMargin: '-10% 0px -30% 0px' });
+
+expStepsEl.forEach(step => expObserver.observe(step));
+
+// Swipe on exp visual box
+const expVisualBox = document.querySelector('.exp-visual-box');
+if (expVisualBox) {
+  let touchStartX = 0, touchStartY = 0;
+  expVisualBox.addEventListener('touchstart', (e) => {
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+  }, { passive: true });
+  expVisualBox.addEventListener('touchend', (e) => {
+    const deltaX = e.changedTouches[0].clientX - touchStartX;
+    const deltaY = e.changedTouches[0].clientY - touchStartY;
+    if (Math.abs(deltaX) < 40 || Math.abs(deltaX) < Math.abs(deltaY)) return;
+    const current = [...expStepsEl].findIndex(s => s.classList.contains('active'));
+    if (deltaX < 0) activateExp(Math.min(current + 1, expStepsEl.length - 1));
+    else            activateExp(Math.max(current - 1, 0));
+  }, { passive: true });
+}
+
+  // =============================================
   // 10. TECH BARS — Animate on scroll into view
   // =============================================
   const techCategories = document.querySelectorAll('.tech-category');
